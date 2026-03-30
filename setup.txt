@@ -13,3 +13,6 @@ run:
     server/ go build .
     server/ go run .
     client/ ng serve 
+
+    docker-compose up --build
+    docker-compose down

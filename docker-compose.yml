@@ -1,0 +1,38 @@
+# docker-compose.yml
+# Run everything with: docker compose up
+# Rebuild after changes: docker compose up --build
+
+services:
+  # Go backend API
+  server:
+    build: ./server
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - MONGODB_URI=${MONGODB_URI}
+      - MONGODB_DATABASE=${MONGODB_DATABASE:-egommerce}
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  # Angular frontend (served via nginx)
+  client:
+    build: ./client
+    ports:
+      - "4200:80"
+    depends_on:
+      - server
+    restart: unless-stopped
+
+  # Local MongoDB (so you don't need Atlas when using Docker)
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo-data:

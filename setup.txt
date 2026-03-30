@@ -1,14 +1,15 @@
-install go - 				https://go.dev/doc/install
-install mongo go drivers - 	go get go.mongodb.org/mongo-driver/v2/mongo
-install godotenv -          go get github.com/joho/godotenv
-install nodejs, npm -       https://nodejs.org/en/download 
-in mongodb: add IP, copy connection string into .env file
-install angular cli -       npm install -g @angular/cli
+    install go - 				https://go.dev/doc/install
+    install mongo go drivers - 	go get go.mongodb.org/mongo-driver/v2/mongo
+    install godotenv -          go get github.com/joho/godotenv
+    install nodejs, npm -       https://nodejs.org/en/download 
+    in mongodb: add IP, copy connection string into .env file
+    install angular cli -       npm install -g @angular/cli
 
 development:
-scaffold angular -          ng new client --style=scss
-scaffold go -               go mod init github.com/jinsaul/e-Gommerce/server
+    scaffold angular -          ng new client --style=scss --ssr=false --skip-git
+    scaffold go -               go mod init github.com/jinsaul/e-Gommerce/server
 
 run:
+    server/ go build .
     server/ go run .
-    client/ ng serve
+    client/ ng serve 

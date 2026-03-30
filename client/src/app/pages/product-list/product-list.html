@@ -1,0 +1,26 @@
+<main class="product-list-page">
+  <h1>Products</h1>
+
+  @if (loading()) {
+    <p class="status-message">Loading products...</p>
+  } @else if (error()) {
+    <p class="status-message error">{{ error() }}</p>
+  } @else if (products().length === 0) {
+    <div class="empty-state">
+      <p>No products yet.</p>
+      <p class="hint">Start the Go server and POST a product to <code>/api/v1/products</code></p>
+    </div>
+  } @else {
+    <ul class="product-grid" role="list">
+      @for (product of products(); track product.id) {
+        <li class="product-card">
+          <h2>{{ product.name }}</h2>
+          <p class="description">{{ product.description }}</p>
+          <p class="price">{{ product.price | currency }}</p>
+          <span class="category">{{ product.category }}</span>
+          <span class="stock">Stock: {{ product.stock }}</span>
+        </li>
+      }
+    </ul>
+  }
+</main>

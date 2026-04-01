@@ -36,7 +36,7 @@ func main() {
 	mux.HandleFunc("GET /api/v1/products", handleGetProducts(db))
 	mux.HandleFunc("POST /api/v1/products", handleCreateProduct(db))
 
-	corsOrigin := os.Getenv("CORS_ORIGIN")
+	corsOrigin := os.Getenv("CORS_ALLOWED_ORIGINS")
 	if corsOrigin == "" {
 		corsOrigin = "http://localhost:4200"
 	}

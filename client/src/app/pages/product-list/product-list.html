@@ -16,7 +16,7 @@
         <li class="product-card">
           <h2>{{ product.name }}</h2>
           <p class="description">{{ product.description }}</p>
-          <p class="price">{{ product.price | currency }}</p>
+          <p class="price">{{ product.price / 100 | currency }}</p>
           <span class="category">{{ product.category }}</span>
           <span class="stock">Stock: {{ product.stock }}</span>
         </li>

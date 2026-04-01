@@ -1,4 +1,3 @@
-/** Product model — matches the Go Product struct on the backend. */
 export interface Product {
   id: string;
   name: string;

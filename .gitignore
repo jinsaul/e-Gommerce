@@ -8,7 +8,7 @@
 *.out
 vendor/
 
-# Environment variables (contains secrets!)
+# Environment variables
 .env
 
 # Node / Angular

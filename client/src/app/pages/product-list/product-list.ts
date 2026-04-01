@@ -13,13 +13,8 @@ import { CurrencyPipe } from '@angular/common';
 export class ProductList implements OnInit {
   private readonly productService = inject(ProductService);
 
-  /** Signal holding the list of products */
   readonly products = signal<Product[]>([]);
-
-  /** Signal for loading state */
   readonly loading = signal(true);
-
-  /** Signal for error messages */
   readonly error = signal<string | null>(null);
 
   ngOnInit(): void {

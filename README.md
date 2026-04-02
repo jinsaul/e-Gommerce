@@ -4,7 +4,7 @@ A mock e-commerce website built with Go, Angular, and MongoDB.
 
 ## Stack
 
-- **Backend:** Go (stdlib `net/http`)
+- **Backend:** Go (RESTful API using stdlib `net/http`)
 - **Frontend:** Angular 19 (Signals, standalone components)
 - **Database:** MongoDB Atlas
 - **Containerization:** Docker & Docker Compose
